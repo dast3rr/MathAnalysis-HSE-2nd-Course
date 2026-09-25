@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{epigraph}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{epigraph}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\begin{document}
+\section{Теория меры}
+\underline{Системы множеств} \\
+Фиксируем множество X и рассматриваем его подмножества. \\
+Обозначения: \\
+$A \sqcup B$ - объеднение множеств, но при этом $A \cap B = \varnothing  $ (дизъюнктивное объединение) \\
+$\bigsqcup_{\alpha \in I} A_\alpha$ - объединение множеств с условием, что $A_\alpha \cap A_\beta = \varnothing (\alpha \ne \beta)$ \\
+Определение: Множества $E_\alpha (\alpha \in I)$ - разбиение множества E, если $E = \bigsqcup_{\alpha \in I} E_\alpha$ \\
+Напоминание: $X \setminus \bigcup _{\alpha \in I} A_\alpha = \bigcap_{\alpha \in I} (X \setminus A_\alpha)$, $X \setminus \bigcap _{\alpha \in I} A_\alpha = \bigcup_{\alpha \in I} (X \setminus A_\alpha)$ \\
+\\
+\underline{Опр} $\mathcal{A}$ - система подмн-в в $X$. \\
+\hspace*{1cm} $\mathcal{A}$ - симметричная система, если из того, что $A \in \mathcal{A} \Rightarrow X \setminus A \in \mathcal{A}$ \\
+\underline{Опр} Св-во $(\sigma_0)$ означает, что \hspace*{0.5cm} если $A$ и $B \in \mathcal{A}$, то $A \cup B \in \mathcal{A}$ \\
+\hspace*{1.1cm} св-во $(\delta_0)$ означает, что \hspace*{0.5cm} если $A$ и $B \in \mathcal{A}$, то $A \cap B \in \mathcal{A}$ \\
+\underline{Опр} Св-во $(\sigma)$ означает, что \hspace*{0.5cm} если $A_1, A_2, \dots \in \mathcal{A}$, то $\bigcup_{n=1}^{\infty} A_n \in \mathcal{A}$ \\
+\hspace*{1.1cm} св-во $(\delta)$ ................ \hspace*{1.8cm} $A_1, A_2 \dots \in \mathcal{A}$, то $\bigcap_{n=1}^{\infty} A_n \in \mathcal{A}$ \\
+\underline{Утверждение}. Если $\mathcal{A}$ - симм. система, то \\
+\hspace*{3cm} $(\sigma_0) \Leftrightarrow (\delta_0)$ и $(\sigma) \Leftrightarrow (\delta)$ \\
+Д-во: $(\sigma) \Leftrightarrow (\delta)$ \\
+\hspace*{1cm} $\Rightarrow: A_n \in \mathcal{A} \Rightarrow X \setminus A_n \in \mathcal{A} \Rightarrow \bigcup_{n=1}^{\infty} (X \setminus A_n) \in \mathcal{A}$ \\
+\hspace*{7.2cm} $||$ \\
+\hspace*{6.5cm} $X \setminus \bigcap_{n=1}^{\infty} A_n \Rightarrow \bigcap_{n=1}^{\infty} A_n$
+\\ Остальное аналогично
+\\
+\\
+\\
+\\
+\underline{Опр} $\mathcal{A}$ - алгебра множеств, если \\
+\hspace*{1cm} 1) $\mathcal{A}$ - симметрично \\
+\hspace*{1cm} 2) $\varnothing \in \mathcal{A}$ (а тогда и $X \in \mathcal{A}$) \\
+\hspace*{1cm} 3) $(\sigma_0)$ и $(\delta_0)$ \\
+\underline{Опр} $\mathcal{A}$ - $\sigma$-алгебра множеств, если \\
+\hspace*{1cm} 1) $\mathcal{A}$ - симметрично \\
+\hspace*{1cm} 2) $\varnothing \in \mathcal{A}$ \\
+\hspace*{1cm} 3) $(\sigma)$ и $(\delta)$ \\
+\underline{Свойства алгебры множеств} \\
+1) $\varnothing, X \in \mathcal{A}$ \\
+2) Если $A, B \in \mathcal{A}$, то $A \setminus B \in \mathcal{A}$ \\
+3) Конечное объединение и конечное пересечение мн-в из $\mathcal{A}$ \\
+лежит в $\mathcal{A}$ \\
+\underline{Замечание:} Если $\mathcal{A}$ - $\sigma$-алгебра, то $\mathcal{A}$ - алгебра \\
+\underline{Примеры} \\
+1) Ограниченные подмн-ва $\mathbb{R}^2$ и их дополнения - это алгебра, но не \\
+$\sigma$-алгебра \\
+2) Мн-во всех подмн-в ($2^X$) - $\sigma$-алгебра \\
+3) $\{\varnothing, X\}$ - $\sigma$-алгебра \\
+4) $\mathcal{A}$ - алгебра ($\sigma$-алгебра) подмн-в $X$. \\
+\hspace*{1cm} $Y \subset X$ \\
+\hspace*{1cm} $\{A \cap Y : A \in \mathcal{A}\}$ - алгебра ($\sigma$-алгебра) подмн-в $Y$. \\
+\hspace*{1cm} $\bigcup_{n=1}^{\infty}(A_n \cap Y) = (\bigcup_{n=1}^{\infty} A_n) \cap Y$ \\
+\hspace*{1cm} $(A \cup B) \cap Y = (A \cap Y) \cup (B \cap Y)$ \\
+\hspace*{1cm} - индуцированная алгебра. \\
+5) $\mathcal{A}_\alpha$ - $\sigma$-алгебры подмн-в $X$. \\
+Тогда $\bigcap_{\alpha \in I} \mathcal{A}_\alpha$ - $\sigma$-алгебра подмн-в $X$ \\
+6) $A$ и $B$ - мн-ва \\
+\hspace*{2.5cm} $\mathcal{A} = \{\varnothing, X, A, B, X \setminus A, X \setminus B, A \cup B, A \cap B, X \setminus (A \cap B),$ \\
+\hspace*{3cm} $X \setminus (A \cup B), A \setminus B, B \setminus A, A \Delta B, X \setminus (A \Delta B)\}$ \\
+\\
+\underline{Теорема} $\mathcal{E}$ - семейство подмн-в $X$. Тогда существует наименьшая \\
+\hspace*{1cm} по включению $\sigma$-алгебра $\mathcal{A}$ подмн-в $X$, содержащая в себе $\mathcal{E}$. \\
+\underline{Д-во}: Пусть $\mathcal{A}_\alpha$ - всевозможные $\sigma$-алгебры содержащие $\mathcal{E}$. \\
+Такие есть т.к. $2^X$ - такая $\sigma$-алгебра. $\bigcap_{\alpha \in I} \mathcal{A}_\alpha$ - то, что нам нужно. \\
+\\
+\underline{Опр} $\mathcal{E}$ - семейство подмножеств $X$. \\
+\hspace*{1cm} \underline{Борелевская оболочка} $\mathcal{E}$ - наименьшая $\sigma$-алгебра, содержащая $\mathcal{E}$. \\
+\hspace*{5cm} Обозначается $\mathcal{B}(\mathcal{E})$ \\
+\hspace*{1cm} \underline{Борелевская $\sigma$-алгебра} $\mathcal{B}^n$ - борелевская оболочка всех открытых \\
+\hspace*{5cm} множеств в $\mathbb{R}^n$
+
+\end{document}
